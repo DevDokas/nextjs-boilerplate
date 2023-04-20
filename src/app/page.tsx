@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Msg } from '@/components/Msg';
-
 export default function Home(): any {
   return (
     <main>
-      <Msg />
+      <h1>Olá</h1>
+      <h2>Como vai?</h2>
+      <p>Tchola</p>
     </main>
   );
 }
