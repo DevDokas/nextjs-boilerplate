@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cypress:open": "node_modules/.bin/cypress open",
-    "cypress:run": "node_modules/.bin/cypress run"
+    "openCy": "node_modules/.bin/cypress open",
+    "test": "node_modules/.bin/cypress run",
+    "testComponent": "node_modules/.bin/cypress run --component"
 
   },
   "dependencies": {

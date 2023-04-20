@@ -44,12 +44,23 @@ describe('Grupo de testes', () => {
 });
 
 describe('Cypress basics', () => {
+  beforeEach('access site wcaquino', () => {
+    cy.visit('https://wcaquino.me/cypress/componentes.html');
+  });
+
   it('Should visit a page and assert title', () => {
     // deve visitar uma página e fazer uma assetiva no titulo
-    cy.visit('https://wcaquino.me/cypress/componentes.html');
 
     cy.title().should('be.equal', 'Campo de Treinamento');
-    /* const title = cy.title();
-    console.log(title); */
+  });
+
+  it('Click the first button and catch the value inside', () => {
+    cy.get('#buttonSimple').should('have.value', 'Clique Me!');
+
+    cy.get('#buttonSimple').click().should('have.value', 'Obrigado!');
+  });
+
+  it('Should select an input and write a text', () => {
+    cy.get('#formNome').type('Ola Mundo');
   });
 });
