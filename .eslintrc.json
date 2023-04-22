@@ -45,6 +45,7 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/react-in-jsx-scope": "off",
+        "no-useless-escape":"off",
         "@typescript-eslint/triple-slash-reference": "off",
         "@typescript-eslint/no-namespace": "off",
         "styled-components-a11y/rule-name": 0,
