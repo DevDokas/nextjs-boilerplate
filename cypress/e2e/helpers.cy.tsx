@@ -86,7 +86,7 @@ describe('Helpers examples', () => {
       cy.window().invoke('alert', 'Da pra ver?');
       cy.get('#resultado').invoke(
         'html',
-        '<input type="button" value="Hacked"'
+        '<input type="button" value="Hacked"/>'
       );
     });
   });

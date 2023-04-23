@@ -52,6 +52,20 @@ describe('Cypress basics', () => {
     // deve visitar uma página e fazer uma assetiva no titulo
 
     cy.title().should('be.equal', 'Campo de Treinamento');
+
+    let syncTitle: string;
+
+    cy.title().then((title) => {
+      console.log(title);
+
+      syncTitle = title;
+
+      cy.get('#elementosForm\\:sugestoes').type(title);
+    });
+
+    cy.get('[data-cy="dataSobrenome"]').then((ef) => {
+      cy.wrap(ef).type(syncTitle);
+    });
   });
 
   it('Click the first button and catch the value inside', () => {
