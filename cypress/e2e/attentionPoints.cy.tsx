@@ -22,4 +22,14 @@ describe('Attention points about Cypress', () => {
         expect(stub.getCall(0)).to.be.calledWith('Alert Simples');
       });
   });
+
+  it('Confirm', () => {
+    cy.get('#confirm').click();
+    cy.on('window:confirm', (msg) => {
+      expect(msg).to.be.equal('Confirm Simples');
+    });
+    cy.on('window:alert', (msg) => {
+      expect(msg).to.be.equal('Confirmado');
+    });
+  });
 });
