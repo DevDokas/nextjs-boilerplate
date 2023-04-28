@@ -57,7 +57,42 @@ describe('Attention points about Cypress', () => {
     cy.get('#prompt').click();
   });
 
-  it('iFrame', () => {});
+  it('iFrame', () => {
+    cy.get('#frame1').then((iframe) => {
+      const body = iframe.contents().find('body');
+      cy.wrap(body)
+        .find('#tfield')
+        .type('Hello World!')
+        .should('have.value', 'Hello World!');
+    });
+  });
+
+  it('Popup', () => {
+    cy.window().then((win) => {
+      cy.stub(win, 'open').as('winOpen');
+    });
+    cy.get('#buttonPopUp').click();
+    cy.get('@winOpen').should('be.called');
+  });
+
+  it('Popup but with Links...', () => {
+    cy.contains('Popup2')
+      .should('have.prop', 'href')
+      .and('contain', 'https://wcaquino.me/cypress/frame.html');
+  });
+
+  it('Access Popup dinamically', () => {
+    cy.contains('Popup2').then((a: any) => {
+      const href = a.prop('href');
+      cy.visit(href);
+    });
+    cy.get('#tfield').type('Testando').should('have.value', 'Testando');
+  });
+
+  it('Should force cypress to work on the same page', () => {
+    cy.contains('Popup2').invoke('removeAttr', 'target').click();
+    cy.get('#tfield').type('Testando').should('have.value', 'Testando');
+  });
 });
 
 /* describe('Desafio', () => {
