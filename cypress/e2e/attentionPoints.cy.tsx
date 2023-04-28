@@ -56,14 +56,16 @@ describe('Attention points about Cypress', () => {
     });
     cy.get('#prompt').click();
   });
+
+  it('iFrame', () => {});
 });
 
-describe('Desafio', () => {
+/* describe('Desafio', () => {
   beforeEach('access site wcaquino', () => {
     cy.visit('https://wcaquino.me/cypress/componentes.html');
   });
 
-  it.only('Validar formulario', () => {
+  it('Validar formulario', () => {
     const stub = cy.stub().as('Alert');
     cy.on('window:alert', stub);
     cy.get('#formCadastrar')
@@ -87,4 +89,4 @@ describe('Desafio', () => {
     cy.get('#formCadastrar').click();
     cy.get('body').contains('Cadastrado!');
   });
-});
+}); */
