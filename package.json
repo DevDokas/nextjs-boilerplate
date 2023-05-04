@@ -10,7 +10,6 @@
     "openCy": "node_modules/.bin/cypress open",
     "test": "node_modules/.bin/cypress run",
     "testComponent": "node_modules/.bin/cypress run --component"
-
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -18,6 +17,7 @@
     "@types/react-dom": "18.0.11",
     "axios": "^1.3.5",
     "cypress": "^12.10.0",
+    "@cypress/xpath": "^2.0.3",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
