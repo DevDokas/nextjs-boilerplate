@@ -5,13 +5,13 @@ describe('Dynamic Tests', () => {
     cy.visit('https://wcaquino.me/cypress/componentes.html');
   });
 
-  const food = ['Carne', 'Frango', 'Pizza', 'Vegetariano'];
+  const foods = ['Carne', 'Frango', 'Pizza', 'Vegetariano'];
 
-  const getRandomNum = (): number => {
-    const min = Math.ceil(0);
-    const max = Math.floor(food.length);
-    return Math.floor(Math.random() * (max - min) + min);
-  };
-
-  it('', () => {});
+  foods.forEach((food) => {
+    it(`Testando a comida ${food}`, () => {
+      cy.xpath(`//label[contains(., ${food})]/../input`).click({
+        multiple: true
+      });
+    });
+  });
 });
