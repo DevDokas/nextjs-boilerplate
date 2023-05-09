@@ -5,7 +5,6 @@ export default function Home(): any {
     <main>
       <h1>Olá</h1>
       <h2>Como vai?</h2>
-      <p>Tchola</p>
     </main>
   );
 }

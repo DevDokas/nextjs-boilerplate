@@ -35,3 +35,4 @@
 //     }
 //   }
 // }
+require('@cypress/xpath');
