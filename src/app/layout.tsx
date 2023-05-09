@@ -12,9 +12,6 @@ export default function RootLayout({
 }): any {
   return (
     <html lang="en">
-      <head>
-        <title>Music Player</title>
-      </head>
       <body>{children}</body>
     </html>
   );
