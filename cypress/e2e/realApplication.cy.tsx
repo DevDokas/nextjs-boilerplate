@@ -64,7 +64,7 @@ describe('Testing the application e2e', () => {
     });
   });
 
-  describe.only('', function () {
+  describe('', function () {
     it('Should create a new movimentation in the account', function () {
       cy.get(':nth-child(2) > .nav-link > .fas').click();
       cy.get('#descricao').type('Despesas Luiz Antonio');
